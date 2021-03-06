@@ -1,2 +1,3 @@
-# biblia_ntlh
-A Nova Tradução na Linguagem de Hoje, abreviadamente chamada NTLH, é uma tradução da Bíblia em linguagem moderna e inteligível em Língua Portuguesa.# bibliantlh
+# The Holy Bible
+
+The Holy Bible is a Revised version of the Translation by João Ferreira de Almeida According to the Best Texts in Hebrew and Greek.

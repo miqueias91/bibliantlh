@@ -1,3 +1,10 @@
+var admobid = {}
+if (/(android)/i.test(navigator.userAgent)) {
+  admobid = {
+    banner: 'ca-app-pub-7091486462236476/4229018266',
+    interstitial: 'ca-app-pub-7091486462236476/1037068087',
+  }
+}
 window.fn = {};
 $("#existeProximoCapitulo").val(0)
 var id = '';
@@ -15,6 +22,7 @@ var fonte_versiculo = JSON.parse(localStorage.getItem('fonte-versiculo') || '20'
 localStorage.setItem("fonte-versiculo", fonte_versiculo);
 var modo_noturno = JSON.parse(localStorage.getItem('modo-noturno') || false);
 localStorage.setItem("modo-noturno", modo_noturno);
+
 if (!window.localStorage.getItem('lista-versiculos')) {
   localStorage.setItem("lista-versiculos", '[]'); 
 }
@@ -28,6 +36,8 @@ var lista_notificacao = JSON.parse(localStorage.getItem('lista-notificacoes') ||
 if (window.localStorage.getItem('userId')) {
   localStorage.removeItem('userId');
 }
+
+window.localStorage.setItem("versao_pro", 'NAO');
 
 window.fn.toggleMenu = function () {
   document.getElementById('appSplitter').left.toggle();
@@ -84,23 +94,36 @@ var app = {
       fn.pushPage({'id': 'textoLivro.html', 'title': 'Gn||Gênesis||50||1'});
     }
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+    document.addEventListener('admob.banner.events.LOAD_FAIL', function(event) {
+      // alert(JSON.stringify(event))
+    });
+    document.addEventListener('admob.interstitial.events.LOAD_FAIL', function(event) {
+      // alert(JSON.stringify(event))
+    });
+    document.addEventListener('admob.interstitial.events.LOAD', function(event) {
+      // alert(JSON.stringify(event))
+      document.getElementsByClassName('showAd').disabled = false
+    });
+    document.addEventListener('admob.interstitial.events.CLOSE', function(event) {
+      // alert(JSON.stringify(event))
+      admob.interstitial.prepare()
+    });
   },
-  // deviceready Event Handler    
-  // Bind any cordova events here. Common events are:
-  // 'pause', 'resume', etc.
   onDeviceReady: function() {    
     this.receivedEvent('deviceready');  
   },
   // Update DOM on a Received Event
   receivedEvent: function(id) {
+    this.firebase();
     this.oneSignal();
     this.getIds();
-    this.buscaNotificacoes();
     this.buscaDadosUsuario();
+    this.admob();
+    this.buscaNotificacoes();
   },
   oneSignal: function() {
     window.plugins.OneSignal
-    .startInit("548c5743-048c-44c8-b307-461400e61857")   
+    .startInit("cca382ef-4327-4962-a0e5-3ab9f30e36be")   
     .handleNotificationOpened(function(jsonData) {
       var mensagem = JSON.parse(JSON.stringify(jsonData['notification']['payload']['additionalData']['mensagem']));
       var titulo = JSON.parse(JSON.stringify(jsonData['notification']['payload']['additionalData']['titulo']));
@@ -123,10 +146,8 @@ var app = {
   },
   retirarMarcadorVersiculo: function(livro, num_capitulo, num_versiculo, array) {
     for(var i=0; i<array.length; i++) {
-      if (array[i]['livro']) {
-        if((array[i]['livro'].toLowerCase() === livro.toLowerCase()) && (array[i]['num_capitulo'] === num_capitulo) && (array[i]['num_versiculo'] === num_versiculo)) {
-          array.splice(i, 1);
-        }
+      if((array[i]['livro'].toLowerCase() === livro.toLowerCase()) && (array[i]['num_capitulo'] === num_capitulo) && (array[i]['num_versiculo'] === num_versiculo)) {
+        array.splice(i, 1);
       }
     }
     var lista_versiculos = JSON.parse(localStorage.getItem('lista-versiculos') || '[]');
@@ -137,10 +158,8 @@ var app = {
     array = JSON.parse(localStorage.getItem('lista-versiculos'));
     if (array) {
       for(var k=0; k < array.length; k++) {
-        if (array[k]['livro']) {
-          if((array[k]['livro'].toLowerCase() == livro.toLowerCase()) && (array[k]['num_capitulo'] == num_capitulo) && (array[k]['num_versiculo'] == num_versiculo)) {
-            return array[k]['cor'];
-          }
+        if((array[k]['livro'].toLowerCase() === livro.toLowerCase()) && (array[k]['num_capitulo'] == num_capitulo) && (array[k]['num_versiculo'] == num_versiculo)) {
+          return array[k]['cor'];
         }
       }   
     }
@@ -342,7 +361,41 @@ var app = {
           }      
         });
 
+        $( ".cores" ).click(function() {
+          marcado = $(this).attr('marcado');
+          var cor = $(this).attr('id');
+          var livro = $('#'+id).attr('livro');
+          var num_capitulo = $('#'+id).attr('num_capitulo');
+          var num_versiculo = $('#'+id).attr('num_versiculo');
+    
+          if (marcado==0) {
+            $('#'+id).attr('marcado',1);
+            $('#'+id).attr('txt_marcado',0);
+            $(".botao_controle").css("display","none");
+            $(".cores").css("display","");
+            $('#'+id).css("background","#f5f5f5");
+            lista_versiculos = JSON.parse(localStorage.getItem('lista-versiculos'));
+            app.retirarMarcadorVersiculo(livro, num_capitulo, num_versiculo, lista_versiculos);
+          }
+          else{
+            $(".copiar").css("display","none");
+            $(".compartilha").css("display","none");
+            id = $("[marcado=1]").attr('id');
+            $("#"+id).attr('marcado',0);
+            $('#'+id).attr('txt_marcado',1);
+            $(".cores").css("display","none");
+            $(".botao_controle").css("display","");
+            $("#"+id).css("background",cor);
+            var livro = $('#'+id).attr('livro');
+            var num_capitulo = $('#'+id).attr('num_capitulo');
+            var num_versiculo = $('#'+id).attr('num_versiculo');
 
+            var lista_versiculos = JSON.parse(localStorage.getItem('lista-versiculos') || '[]');
+            lista_versiculos.push({cor: cor, livro: livro, num_capitulo: num_capitulo, num_versiculo: num_versiculo});
+            localStorage.setItem("lista-versiculos", JSON.stringify(lista_versiculos));
+            usar_cores = 0;
+          }      
+        });
       }
     });
   },
@@ -568,6 +621,131 @@ var app = {
       xmlhttp.send();
     }
   },
+  pesquisaBiblia: function(term){
+    var versaoId = versaoId || "ntlh";
+
+    if (term != '') {
+      term = term.toLowerCase();
+      text = '';
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          $("#resultado_pesquisa_biblia").html('');
+          var data = JSON.parse(this.responseText);
+          data.forEach(function (biblia) {
+            var achou = false;
+            var num_cap_busca = 0;
+            biblia['chapters'].forEach(function (versiculos) {
+              for (var i = 0; i < versiculos.length; i++) {
+                if (!achou) {
+                  str = versiculos[i].toLowerCase();
+                  if(str.match(term)){
+                    achou = true;
+                    text +=
+                    '<ons-list-item onclick="fn.pushPage({\'id\': \'textoLivro.html\', \'title\': \''+biblia['abbrev']+'||'+biblia['name']+'||'+biblia['chapters'].length+'||'+(parseInt(num_cap_busca)+1)+'\'});">'+
+                      '<p style="font-size: 20px;line-height:30px;text-align:justify">'+
+                        versiculos[i] +
+                      '</p>'+
+                      '<p style="font-size: 15px;">'+biblia['abbrev'].toUpperCase()+' '+(parseInt(num_cap_busca)+1)+':'+(parseInt(i)+1)+'</p>'+
+                    '</ons-list-item>';
+                  }
+                }
+              }
+              num_cap_busca = num_cap_busca + 1;
+            });
+          });
+          if (text === '') {
+            text = '<p style="text-align: center; margin: 0 0 10px 0;">Nenhum resultado encontrado</p>';
+          }
+          $("#resultado_pesquisa_biblia").html(text);
+          // $("#resultado_pesquisa_biblia").css("display","");
+        }
+      };
+      xmlhttp.open("GET", "js/"+versaoId+".json", true);
+      xmlhttp.send();
+    }
+  },
+  dateTime: function() {
+    let now = new Date;
+    let ano = now.getFullYear();
+    let mes = now.getMonth() + 1;
+    let dia = now.getDate();
+
+    let hora = now.getHours();
+    let min = now.getMinutes();
+    let seg = now.getSeconds();
+
+    if (parseInt(mes) < 10) {
+      mes = '0'+mes;
+    }
+    if (parseInt(dia) < 10) {
+      dia = '0'+dia;
+    }
+    if (parseInt(hora) < 10) {
+      hora = '0'+hora;
+    }
+    if (parseInt(min) < 10) {
+      min = '0'+min;
+    }
+    if (parseInt(seg) < 10) {
+      seg = '0'+seg;
+    }
+    return ano+'-'+mes+'-'+dia+' '+hora+':'+min+':'+seg;
+  },
+  getIds: function() {
+    window.plugins.OneSignal.getIds(function(ids) {
+      window.localStorage.setItem('playerID', ids.userId);
+      window.localStorage.setItem('pushToken', ids.pushToken);
+    });
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        window.localStorage.setItem('uid',uid);
+      }
+    });
+
+    this.cadastraUser();
+  },
+  cadastraUser: function() {
+    var playerID = window.localStorage.getItem('playerID');
+    var pushToken = window.localStorage.getItem('pushToken');
+    var uid = window.localStorage.getItem('uid');
+    
+    if (playerID && uid) {
+      $.ajax({
+        url: "https://www.innovatesoft.com.br/webservice/app/cadastraUser.php",
+        dataType: 'html',
+        type: 'POST',
+        data: {
+          'userId': playerID,
+          'pushToken': pushToken,
+          'uid': uid,
+          'datacadastro': this.dateTime(),
+          'ultimoacesso': this.dateTime(),
+          'app': 'ntlh_v2',
+        },
+        error: function(e) {
+        },
+        success: function(a) {
+        },
+      });
+    }
+  },
+  registraAcesso: function(pagina) {
+    /*if (window.localStorage.getItem('uid')) {
+      $.ajax({
+        url: "https://www.innovatesoft.com.br/webservice/app/registraAcesso.php",
+        dataType: 'json',
+        type: 'POST',
+        data: {
+          'pagina': pagina,
+          'origem': window.localStorage.getItem('uid')
+        },
+      });
+    }*/
+  },
   buscaCantor: function(id) {
     var selector = this;
     var texto = "";
@@ -675,203 +853,12 @@ var app = {
       xmlhttp.send();
     }
   },
-  pesquisaBiblia: function(term){
-    var versaoId = versaoId || "ntlh";
-
-    if (term != '') {
-      term = term.toLowerCase();
-      text = '';
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          $("#resultado_pesquisa_biblia").html('');
-          var data = JSON.parse(this.responseText);
-          data.forEach(function (biblia) {
-            var achou = false;
-            var num_cap_busca = 0;
-            biblia['chapters'].forEach(function (versiculos) {
-              for (var i = 0; i < versiculos.length; i++) {
-                if (!achou) {
-                  str = versiculos[i].toLowerCase();
-                  if(str.match(term)){
-                    achou = true;
-                    text +=
-                    '<ons-list-item onclick="fn.pushPage({\'id\': \'textoLivro.html\', \'title\': \''+biblia['abbrev']+'||'+biblia['name']+'||'+biblia['chapters'].length+'||'+(parseInt(num_cap_busca)+1)+'\'});">'+
-                      '<p style="font-size: 20px;line-height:30px;text-align:justify">'+
-                        versiculos[i] +
-                      '</p>'+
-                      '<p style="font-size: 15px;">'+biblia['abbrev'].toUpperCase()+' '+(parseInt(num_cap_busca)+1)+':'+(parseInt(i)+1)+'</p>'+
-                    '</ons-list-item>';
-                  }
-                }
-              }
-              num_cap_busca = num_cap_busca + 1;
-            });
-          });
-          if (text === '') {
-            text = '<p style="text-align: center; margin: 0 0 10px 0;">Nenhum resultado encontrado</p>';
-          }
-          $("#resultado_pesquisa_biblia").html(text);
-          // $("#resultado_pesquisa_biblia").css("display","");
-        }
-      };
-      xmlhttp.open("GET", "js/"+versaoId+".json", true);
-      xmlhttp.send();
-    }
-  },
-  dateTime: function() {
-    let now = new Date;
-    let ano = now.getFullYear();
-    let mes = now.getMonth() + 1;
-    let dia = now.getDate();
-
-    let hora = now.getHours();
-    let min = now.getMinutes();
-    let seg = now.getSeconds();
-
-    if (parseInt(mes) < 10) {
-      mes = '0'+mes;
-    }
-    if (parseInt(dia) < 10) {
-      dia = '0'+dia;
-    }
-    if (parseInt(hora) < 10) {
-      hora = '0'+hora;
-    }
-    if (parseInt(min) < 10) {
-      min = '0'+min;
-    }
-    if (parseInt(seg) < 10) {
-      seg = '0'+seg;
-    }
-    return ano+'-'+mes+'-'+dia+' '+hora+':'+min+':'+seg;
-  },
-  getIds: function() {
-    window.plugins.OneSignal.getIds(function(ids) {
-      window.localStorage.setItem('playerID', ids.userId);
-      window.localStorage.setItem('pushToken', ids.pushToken);
-    });
-
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        var isAnonymous = user.isAnonymous;
-        var uid = user.uid;
-        window.localStorage.setItem('uid',uid);
-      }
-    });
-
-    this.cadastraUser();
-  },
-  cadastraUser: function() {
-    var playerID = window.localStorage.getItem('playerID');
-    var pushToken = window.localStorage.getItem('pushToken');
-    var uid = window.localStorage.getItem('uid');
-    
-    if (playerID && uid) {
-      $.ajax({
-        url: "https://www.innovatesoft.com.br/webservice/app/cadastraUser.php",
-        dataType: 'html',
-        type: 'POST',
-        data: {
-          'userId': playerID,
-          'pushToken': pushToken,
-          'uid': uid,
-          'datacadastro': this.dateTime(),
-          'ultimoacesso': this.dateTime(),
-          'app': 'ntlh',
-        },
-        error: function(e) {
-        },
-        success: function(a) {
-        },
-      });
-    }
-  },
-  registraAcesso: function(pagina) {
-    /*if (window.localStorage.getItem('uid')) {
-      $.ajax({
-        url: "https://www.innovatesoft.com.br/webservice/app/registraAcesso.php",
-        dataType: 'json',
-        type: 'POST',
-        data: {
-          'pagina': pagina,
-          'origem': window.localStorage.getItem('uid')
-        },
-      });
-    }*/
-  },
-  verificaExistenciaUsuario: function(usuario, senha, nome, email) {
-    var uid = window.localStorage.getItem('uid');
-    if (usuario != "") {
-      fn.showDialog('modal-aguarde');
-      $.ajax({
-        url: "https://www.innovatesoft.com.br/webservice/app/verificaExistenciaUsuario.php?usuario="+usuario,
-        dataType: 'json',
-        type: 'POST',
-        data: {
-          'nome': nome,
-          'email': email,
-          'senha': senha,
-          'uid': uid,
-        },
-        error: function(e) {
-          var timeoutID = 0;
-          clearTimeout(timeoutID);
-          timeoutID = setTimeout(function() { fn.hideDialog('modal-aguarde') }, 100);
-        },
-        success: function(a) {
-          var timeoutID = 0;
-          clearTimeout(timeoutID);
-          timeoutID = setTimeout(function() { fn.hideDialog('modal-aguarde') }, 100);
-          if (a == true) {
-            ons.notification.alert(
-              'Escolha outro usuário!',
-              {title: 'Mensagem'}
-            );
-          }
-          else{
-            localStorage.setItem("usuario", usuario);
-            localStorage.setItem("nome", nome);
-            localStorage.setItem("email", email);
-
-            ons.notification.alert(
-              'Dados cadastrados com sucesso!',
-              {title: 'Mensagem'}
-            );
-          }
-        },
-      });
-    }
-  },
-  buscaDadosUsuario: function() {
-    var uid = window.localStorage.getItem('uid');
-    if (uid) {
-      $.ajax({
-        url: "https://www.innovatesoft.com.br/webservice/app/buscaDadosUsuario.php",
-        dataType: 'json',
-        type: 'POST',
-        data: {
-          'uid': uid,
-        },
-  
-        success: function(a) {
-          if (a) {
-            localStorage.setItem("usuario", a['usuario']);
-            localStorage.setItem("nome", a['nome']);
-            localStorage.setItem("email", a['email']);
-            if (a['final_versao_pro'] == null) {
-              a['final_versao_pro'] = false;
-            }
-            localStorage.setItem("versao_pro", a['final_versao_pro']);
-          }
-        },
-      });
-    }
-  },
   buscaNotificacoes: function(){
     var uid = window.localStorage.getItem('uid');
+    var playerID = window.localStorage.getItem('playerID');
+
     if (uid) {
-      firebase.database().ref('notificacoes').child(uid).child('ntlh').on('value', (snapshot) => {
+      firebase.database().ref('notificacoes').child(uid).on('value', (snapshot) => {
         //localStorage.removeItem("lista-notificacoes");
         var notificacoes = snapshot.val();
         if (notificacoes) {
@@ -886,10 +873,138 @@ var app = {
             lista_notificacao.push({id: hash, titulo: titulo, mensagem: mensagem, lido: lido, data_notificacao: data_notificacao, link: link});
             localStorage.setItem("lista-notificacoes", JSON.stringify(lista_notificacao));
           });
-          firebase.database().ref('notificacoes').child(uid).child('ntlh').remove();
+          firebase.database().ref('notificacoes').child(uid).remove();
         }
       });
     }
+  },
+  verificaExistenciaUsuario: function(usuario, religiao, nome, email, celular) {
+    var uid = window.localStorage.getItem('uid');
+    var playerID = window.localStorage.getItem('playerID');
+    if (usuario != "") {
+      fn.showDialog('modal-aguarde');
+      $.ajax({
+        url: "https://www.innovatesoft.com.br/webservice/app/verificaExistenciaUsuario.php?usuario="+usuario,
+        dataType: 'json',
+        type: 'POST',
+        data: {
+          'nome': nome,
+          'email': email,
+          'religiao': religiao,
+          'celular': celular,
+          'uid': uid,
+          'userId': playerID,
+        },
+        error: function(e) {
+          var timeoutID = 0;
+          clearTimeout(timeoutID);
+          timeoutID = setTimeout(function() { fn.hideDialog('modal-aguarde') }, 100);
+          ons.notification.alert(
+            'Verifique sua conexão com a internet!',
+            {title: 'Erro'}
+          );
+        },
+        success: function(a) {
+          var timeoutID = 0;
+          clearTimeout(timeoutID);
+          timeoutID = setTimeout(function() { fn.hideDialog('modal-aguarde') }, 100);
+          if (a == true) {
+            ons.notification.alert(
+              'Escolha outro usuário!',
+              {title: 'Erro'}
+            );
+          }
+          else{
+            window.localStorage.setItem("usuario", usuario);
+            window.localStorage.setItem("nome", nome);
+            window.localStorage.setItem("email", email);
+            window.localStorage.setItem("religiao", religiao);
+            window.localStorage.setItem("celular", celular);
+            ons.notification.alert(
+              'Dados atualizados com sucesso!',
+              {title: 'Sucesso'}
+            );
+          }
+        },
+      });
+    }
+  },
+  buscaDadosUsuario: function() {
+    var uid = window.localStorage.getItem('uid');
+    var playerID = window.localStorage.getItem('playerID');
+
+    if (uid) {
+      $.ajax({
+        url: "https://www.innovatesoft.com.br/webservice/app/buscaDadosUsuario.php",
+        dataType: 'json',
+        type: 'POST',
+        async: true,
+        data: {
+          'uid': uid,
+          'userId': playerID,
+        },
+        success: function(a) {
+          if (a) {
+            window.localStorage.setItem("nome", a['nome']);
+            window.localStorage.setItem("usuario", a['usuario']);
+            window.localStorage.setItem("email", a['email']);
+            window.localStorage.setItem("celular", a['celular']);
+            window.localStorage.setItem("religiao", a['religiao']);
+            if (a['final_versao_pro'] == null) {
+              a['final_versao_pro'] = 'NAO';
+            }
+            window.localStorage.setItem("versao_pro", a['final_versao_pro']);
+          }
+        },
+      });
+    }
+  },
+  admob: function(){
+    window.plugins.insomnia.keepAwake();
+    admob.banner.config({ 
+      id: admobid.banner, 
+      isTesting: false, 
+      autoShow: true, 
+    })
+
+    if (window.localStorage.getItem("versao_pro") === 'NAO') {
+      admob.banner.prepare()
+    }
+    
+    admob.interstitial.config({
+      id: admobid.interstitial,
+      isTesting: false,
+      autoShow: false,
+    })
+
+    if (window.localStorage.getItem("versao_pro") === 'NAO') {
+      admob.interstitial.prepare()
+    }
+
+    document.getElementsByClassName('showAd').disabled = true
+    document.getElementsByClassName('showAd').onclick = function() {
+      admob.interstitial.show()
+    }
+  },
+  firebase: function(){
+    var firebaseConfig = {
+      apiKey: "AIzaSyBPDBSYTfnGn_XTlz2hPKxtUlxB00S2frI",
+      authDomain: "biblia-sagrada-ntlh-13110.firebaseapp.com",
+      projectId: "biblia-sagrada-ntlh-13110",
+      storageBucket: "biblia-sagrada-ntlh-13110.appspot.com",
+      messagingSenderId: "589048951164",
+      appId: "1:589048951164:web:b1deceb2af3f8bf66cf4f9",
+      measurementId: "G-3VYKSCHL98"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    firebase.auth().signInAnonymously().catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorMessage)
+    });
   }
 };
 

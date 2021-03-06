@@ -99,3 +99,6 @@ ons-fab.compartilhar, ons-fab.copiar {
 .text-input--material:focus {
     background-image: linear-gradient(#333, #333), linear-gradient(to top, transparent 1px, #afafaf 1px)!important;
 }
+.alert-dialog {
+    width: 100%;
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">589048951164-smhslef8rir59nmcprjseniu8vggsgfa.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">589048951164</string>
+    <string name="google_api_key" translatable="false">AIzaSyD5aUsP2gjEtwW9ICFHvAli6ip0yH8ZNAE</string>
+    <string name="google_app_id" translatable="false">1:589048951164:android:3b375d11d2bd05af6cf4f9</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD5aUsP2gjEtwW9ICFHvAli6ip0yH8ZNAE</string>
+    <string name="google_storage_bucket" translatable="false">biblia-sagrada-ntlh-13110.appspot.com</string>
+</resources>

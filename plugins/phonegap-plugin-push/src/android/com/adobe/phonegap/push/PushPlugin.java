@@ -50,7 +50,6 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
 
   /**
    * Gets the application context from cordova's main activity.
-   *
    * @return the application context
    */
   private Context getApplicationContext() {
@@ -114,10 +113,6 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
           .setUsage(AudioAttributes.USAGE_NOTIFICATION_RINGTONE).build();
       if (SOUND_RINGTONE.equals(sound)) {
         mChannel.setSound(android.provider.Settings.System.DEFAULT_RINGTONE_URI, audioAttributes);
-      } else if (sound != null && sound.isEmpty()) {
-        // Disable sound for this notification channel if an empty string is passed.
-        // https://stackoverflow.com/a/47144981/6194193
-        mChannel.setSound(null, null);
       } else if (sound != null && !sound.contentEquals(SOUND_DEFAULT)) {
         Uri soundUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + packageName + "/raw/" + sound);
         mChannel.setSound(soundUri, audioAttributes);
@@ -125,20 +120,8 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
         mChannel.setSound(android.provider.Settings.System.DEFAULT_NOTIFICATION_URI, audioAttributes);
       }
 
-      // If vibration settings is an array set vibration pattern, else set enable
-      // vibration.
-      JSONArray pattern = channel.optJSONArray(CHANNEL_VIBRATION);
-      if (pattern != null) {
-        int patternLength = pattern.length();
-        long[] patternArray = new long[patternLength];
-        for (int i = 0; i < patternLength; i++) {
-          patternArray[i] = pattern.optLong(i);
-        }
-        mChannel.setVibrationPattern(patternArray);
-      } else {
-        boolean vibrate = channel.optBoolean(CHANNEL_VIBRATION, true);
-        mChannel.enableVibration(vibrate);
-      }
+      //JSONArray pattern = channel.optJSONArray(CHANNEL_VIBRATION);
+      //mChannel.setVibrationPattern();
 
       notificationManager.createNotificationChannel(mChannel);
     }
@@ -146,25 +129,17 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
 
   @TargetApi(26)
   private void createDefaultNotificationChannelIfNeeded(JSONObject options) {
-    String id;
     // only call on Android O and above
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
       final NotificationManager notificationManager = (NotificationManager) cordova.getActivity()
           .getSystemService(Context.NOTIFICATION_SERVICE);
       List<NotificationChannel> channels = notificationManager.getNotificationChannels();
-
-      for (int i = 0; i < channels.size(); i++) {
-        id = channels.get(i).getId();
-        if (id.equals(DEFAULT_CHANNEL_ID)) {
-          return;
-        }
-      }
-      try {
-        options.put(CHANNEL_ID, DEFAULT_CHANNEL_ID);
-        options.putOpt(CHANNEL_DESCRIPTION, "PhoneGap PushPlugin");
-        createChannel(options);
-      } catch (JSONException e) {
-        Log.e(LOG_TAG, "execute: Got JSON Exception " + e.getMessage());
+      if (channels.size() == 0) {
+        NotificationChannel mChannel = new NotificationChannel(DEFAULT_CHANNEL_ID, "PhoneGap PushPlugin",
+            NotificationManager.IMPORTANCE_DEFAULT);
+        mChannel.enableVibration(options.optBoolean(VIBRATE, true));
+        mChannel.setShowBadge(true);
+        notificationManager.createNotificationChannel(mChannel);
       }
     }
   }
@@ -198,18 +173,10 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
 
             Log.v(LOG_TAG, "execute: senderID=" + senderID);
 
-            try {
-              token = FirebaseInstanceId.getInstance().getToken();
-            } catch (IllegalStateException e) {
-              Log.e(LOG_TAG, "Exception raised while getting Firebase token " + e.getMessage());
-            }
+            token = FirebaseInstanceId.getInstance().getToken();
 
             if (token == null) {
-              try {
-                token = FirebaseInstanceId.getInstance().getToken(senderID, FCM);
-              } catch (IllegalStateException e) {
-                Log.e(LOG_TAG, "Exception raised while getting Firebase token " + e.getMessage());
-              }
+              token = FirebaseInstanceId.getInstance().getToken(senderID, FCM);
             }
 
             if (!"".equals(token)) {
@@ -421,20 +388,6 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
           }
         }
       });
-    } else if (CLEAR_NOTIFICATION.equals(action)) {
-      // clearing a single notification
-      cordova.getThreadPool().execute(new Runnable() {
-        public void run() {
-          try {
-            Log.v(LOG_TAG, "clearNotification");
-            int id = data.getInt(0);
-            clearNotification(id);
-            callbackContext.success();
-          } catch (JSONException e) {
-            callbackContext.error(e.getMessage());
-          }
-        }
-      });
     } else {
       Log.e(LOG_TAG, "Invalid action : " + action);
       callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
@@ -461,9 +414,8 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
   }
 
   /*
-   * Sends the pushbundle extras to the client application. If the client
-   * application isn't currently active and the no-cache flag is not set, it is
-   * cached for later processing.
+   * Sends the pushbundle extras to the client application.
+   * If the client application isn't currently active and the no-cache flag is not set, it is cached for later processing.
    */
   public static void sendExtras(Bundle extras) {
     if (extras != null) {
@@ -535,14 +487,6 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
     final NotificationManager notificationManager = (NotificationManager) cordova.getActivity()
         .getSystemService(Context.NOTIFICATION_SERVICE);
     notificationManager.cancelAll();
-  }
-
-  private void clearNotification(int id) {
-    final NotificationManager notificationManager = (NotificationManager) cordova.getActivity()
-        .getSystemService(Context.NOTIFICATION_SERVICE);
-    String appName = (String) this.cordova.getActivity().getPackageManager()
-        .getApplicationLabel(this.cordova.getActivity().getApplicationInfo());
-    notificationManager.cancel(appName, id);
   }
 
   private void subscribeToTopics(JSONArray topics, String registrationToken) {
