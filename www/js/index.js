@@ -146,8 +146,10 @@ var app = {
   },
   retirarMarcadorVersiculo: function(livro, num_capitulo, num_versiculo, array) {
     for(var i=0; i<array.length; i++) {
-      if((array[i]['livro'].toLowerCase() === livro.toLowerCase()) && (array[i]['num_capitulo'] === num_capitulo) && (array[i]['num_versiculo'] === num_versiculo)) {
-        array.splice(i, 1);
+      if (array[i]['livro']) {
+        if((array[i]['livro'].toLowerCase() === livro.toLowerCase()) && (array[i]['num_capitulo'] === num_capitulo) && (array[i]['num_versiculo'] === num_versiculo)) {
+          array.splice(i, 1);
+        }
       }
     }
     var lista_versiculos = JSON.parse(localStorage.getItem('lista-versiculos') || '[]');
@@ -158,8 +160,10 @@ var app = {
     array = JSON.parse(localStorage.getItem('lista-versiculos'));
     if (array) {
       for(var k=0; k < array.length; k++) {
-        if((array[k]['livro'].toLowerCase() === livro.toLowerCase()) && (array[k]['num_capitulo'] == num_capitulo) && (array[k]['num_versiculo'] == num_versiculo)) {
-          return array[k]['cor'];
+        if (array[k]['livro']) {
+          if((array[k]['livro'].toLowerCase() == livro.toLowerCase()) && (array[k]['num_capitulo'] == num_capitulo) && (array[k]['num_versiculo'] == num_versiculo)) {
+            return array[k]['cor'];
+          }
         }
       }   
     }
@@ -462,57 +466,50 @@ var app = {
     });
   },
   buscaVersiculoDia: function(livro_capitulo_versiculo, id) {
-    $("#textoLivro").html('');
+    $("#"+id).html('Buscando...');
     var selector = this;
     var texts = [];
     var dados0 = livro_capitulo_versiculo.split('||');
     var livro = dados0[0];
     var dados1 = dados0[1].split('.');
-    var capitulo = dados1[0];
+    var capitulo = (dados1[0] - 1);
     var versiculo = (dados1[1]-1);
-    $.ajax({
-      type : "GET",
-      url : "js/ntlh.json",
-      dataType : "json",
-      success : function(data){
-        $(selector).each(function(){
-          var ref = livro+""+capitulo+"."+versiculo;
-          var reg = new RegExp('([0-9]?[a-zA-Z]{2,3})([0-9]+)[\.|:]([0-9]+)-?([0-9]{1,3})?');
-          var regex = reg.exec(ref);                    
-          var myBook = null;
-          var obj_v = {
-            ref : ref,
-            book : regex[1].toLowerCase(),
-            chapter : parseInt(regex[2]),
-            text : ""
-          };
 
-          for(i in data){
-            if(data[i].abbrev == obj_v.book){
-                myBook = data[i];
-            }
+    var text = "";
+    var texto = "";
+    var abbrev = "";
+    var name = "";
+    var chapters = "";
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      fn.showDialog('modal-aguarde');
+      if (this.readyState == 4 && this.status == 200) {
+        var data = JSON.parse(this.responseText);
+        for (var i = 0; i < data.length; i++) {
+          if (data[i]['abbrev'].toLowerCase() == livro.toLowerCase()) {
+            abbrev = data[i]['abbrev'];
+            name = data[i]['name'];
+            chapters = data[i]['chapters'].length;
+            text = data[i]['chapters'][parseInt(capitulo)][versiculo];
           }
-          var start = parseInt(regex[3]);
-          var end = parseInt(regex[4]) || parseInt(regex[3]);
-
-
-          for(var i = start; i <=  end; i++){
-            console.log(myBook)
-            console.log(myBook.name)
-            if (myBook.chapters[obj_v.chapter - 1][i]) {
-                obj_v.text += '<ons-list-item onclick="fn.pushPage({\'id\': \'textoLivro.html\', \'title\': \''+myBook.abbrev+'||'+myBook.name+'||'+myBook.chapters.length+'||'+(parseInt(capitulo))+'\'});">'+
+          
+        }
+        texto = '<ons-list-item onclick="fn.pushPage({\'id\': \'textoLivro.html\', \'title\': \''+abbrev+'||'+name+'||'+chapters+'||'+(parseInt(capitulo)+1)+'\'});">'+
 
                   '<p style="font-size: 20px;line-height:30px;text-align:justify">'+
-                    myBook.chapters[obj_v.chapter - 1][i] +
+                    text+
                   '</p>'+
-                  '<p style="font-size: 15px;">'+livro.toUpperCase()+' '+capitulo+':'+(parseInt(i)+1)+'</p>'+
+                  '<p style="font-size: 15px;">'+livro.toUpperCase()+' '+(parseInt(capitulo)+1)+':'+(parseInt(versiculo)+1)+'</p>'+
                 '</ons-list-item>';
-            }
-          }
-          $("#"+id).append(obj_v.text);
-        });
+        var timeoutID = 0;
+        clearTimeout(timeoutID);
+        timeoutID = setTimeout(function() { fn.hideDialog('modal-aguarde') }, 100);
+        $("#"+id).html(texto);
       }
-    });
+    };
+    xmlhttp.open("GET", "js/ntlh.json", true);
+    xmlhttp.send();
   },
   buscaHinario: function(id) {
     var selector = this;

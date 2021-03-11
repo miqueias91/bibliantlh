@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "/var/www/app/android/bibliantlh/platforms/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml",
+            "outputFile": "/var/www/app/bibliantlh/platforms/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml",
             "map": [
+                {
+                    "source": "/var/www/app/bibliantlh/platforms/android/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "171,55,112",
+                        "endColumns": "63,56,58",
+                        "endOffsets": "230,107,166"
+                    },
+                    "to": {
+                        "startLines": "250,251,276",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "16889,16953,19977",
+                        "endColumns": "63,56,58",
+                        "endOffsets": "16948,17005,20031"
+                    }
+                },
                 {
                     "source": "/home/miqueias/.gradle/caches/transforms-2/files-2.1/632486dd5fe09fc419b241de4620e909/play-services-basement-11.6.2/res/values/values.xml",
                     "from": {
@@ -21,23 +38,6 @@
                     }
                 },
                 {
-                    "source": "/var/www/app/android/bibliantlh/platforms/android/app/build/generated/res/google-services/release/values/values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614",
-                        "endColumns": "143,81,103,108,119,108",
-                        "endOffsets": "194,276,380,489,609,718"
-                    },
-                    "to": {
-                        "startLines": "269,271,272,273,274,275",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "19227,19453,19535,19639,19748,19868",
-                        "endColumns": "143,81,103,108,119,108",
-                        "endOffsets": "19366,19530,19634,19743,19863,19972"
-                    }
-                },
-                {
                     "source": "/home/miqueias/.gradle/caches/transforms-2/files-2.1/861055886904d4b0b4bb37c0de00ecee/support-media-compat-27.1.1/res/values/values.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10",
@@ -52,6 +52,23 @@
                         "startOffsets": "4357,107715,107891,108013,108275,108470",
                         "endColumns": "88,65,121,60,65,66",
                         "endOffsets": "4441,107776,108008,108069,108336,108532"
+                    }
+                },
+                {
+                    "source": "/var/www/app/bibliantlh/platforms/android/app/build/generated/res/google-services/release/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614",
+                        "endColumns": "143,81,103,108,119,108",
+                        "endOffsets": "194,276,380,489,609,718"
+                    },
+                    "to": {
+                        "startLines": "269,271,272,273,274,275",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "19227,19453,19535,19639,19748,19868",
+                        "endColumns": "143,81,103,108,119,108",
+                        "endOffsets": "19366,19530,19634,19743,19863,19972"
                     }
                 },
                 {
@@ -124,23 +141,6 @@
                         "startOffsets": "20036,20078,20155,20193,20232,20285,20353",
                         "endColumns": "41,76,37,38,52,67,38",
                         "endOffsets": "20073,20150,20188,20227,20280,20348,20387"
-                    }
-                },
-                {
-                    "source": "/var/www/app/android/bibliantlh/platforms/android/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "171,55,112",
-                        "endColumns": "63,56,58",
-                        "endOffsets": "230,107,166"
-                    },
-                    "to": {
-                        "startLines": "250,251,276",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "16889,16953,19977",
-                        "endColumns": "63,56,58",
-                        "endOffsets": "16948,17005,20031"
                     }
                 },
                 {
