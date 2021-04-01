@@ -1,29 +1,29 @@
 -- Merging decision tree log ---
 provider#nl.xservices.plugins.FileProvider
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:9-21:20
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:9-21:20
 	android:grantUriPermissions
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:100-134
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:100-134
 	android:authorities
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:19-74
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:19-74
 	android:exported
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:75-99
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:75-99
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:135-183
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:19:135-183
 activity#com.adobe.phonegap.push.PushHandlerActivity
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:31:9-173
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:31:9-173
 	android:exported
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:31:19-42
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:31:19-42
 	android:permission
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:31:102-170
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:31:102-170
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:31:43-101
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:31:43-101
 manifest
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:2:1-107:12
 MERGED from [com.google.android.gms:play-services-location:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/755fd9a98be3c947809615aef178a8dc/play-services-location-11.6.2/AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-base:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/a9dc6ad9d3e2783efc16845fc813f36b/play-services-base-11.6.2/AndroidManifest.xml:16:1-21:12
@@ -43,7 +43,7 @@ MERGED from [com.android.support:support-v4:27.1.1] /home/miqueias/.gradle/cache
 MERGED from [com.android.support:appcompat-v7:27.1.1] /home/miqueias/.gradle/caches/transforms-2/files-2.1/9bab41cd1cac7e96d8cf039a3df31825/appcompat-v7-27.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [me.leolin:ShortcutBadger:1.1.17] /home/miqueias/.gradle/caches/transforms-2/files-2.1/2ac7518d36656ed0b68c57db75f72795/ShortcutBadger-1.1.17/AndroidManifest.xml:2:1-52:12
 MERGED from [com.android.support:multidex:1.0.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/f331adce4e4f4bd195fefe9b46054508/multidex-1.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [:CordovaLib] /var/www/app/bibliantlh/platforms/android/CordovaLib/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:1-27:12
+MERGED from [:CordovaLib] /var/www/app/android/bibliantlh/platforms/android/CordovaLib/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:1-27:12
 MERGED from [com.google.android.gms:play-services-base-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/6ac14e6e831241d2adb584b9d6e88771/play-services-base-license-11.6.2/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-ads-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e2ce62aa452e1e05fa0045097689dc69/play-services-ads-license-11.6.2/AndroidManifest.xml:2:1-6:12
 MERGED from [com.android.support:support-media-compat:27.1.1] /home/miqueias/.gradle/caches/transforms-2/files-2.1/861055886904d4b0b4bb37c0de00ecee/support-media-compat-27.1.1/AndroidManifest.xml:17:1-22:12
@@ -68,41 +68,41 @@ MERGED from [com.google.firebase:firebase-common-license:11.6.2] /home/miqueias/
 MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/06b8bb049d5707a28baf000c9f62a3eb/firebase-analytics-license-11.6.2/AndroidManifest.xml:2:1-6:12
 MERGED from [android.arch.core:runtime:1.1.0] /home/miqueias/.gradle/caches/transforms-2/files-2.1/0a2bdce0da8cfd5c768a5af1598d6c65/runtime-1.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e4e6b57f002cfe080fc04629f5b21250/firebase-analytics-impl-license-11.6.2/AndroidManifest.xml:2:1-6:12
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12
 	package
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:102-142
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:102-142
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:74-101
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:74-101
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
 	android:hardwareAccelerated
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:11-45
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:143-201
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:143-201
 	android:versionCode
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:46-73
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:46-73
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
 supports-screens
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:5-191
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:5-191
 	android:largeScreens
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:49-76
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:49-76
 	android:smallScreens
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:132-159
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:132-159
 	android:normalScreens
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:77-105
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:77-105
 	android:xlargeScreens
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:160-188
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:160-188
 	android:resizeable
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:106-131
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:106-131
 	android:anyDensity
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:23-48
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:3:23-48
 uses-permission#android.permission.INTERNET
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:4:5-67
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:4:5-67
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:17:5-67
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:17:5-67
 MERGED from [com.google.firebase:firebase-analytics:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/02671c6f75e09b3d81498062d9238e7b/firebase-analytics-11.6.2/AndroidManifest.xml:20:5-66
@@ -114,9 +114,9 @@ MERGED from [com.google.firebase:firebase-iid:11.6.2] /home/miqueias/.gradle/cac
 MERGED from [com.google.android.gms:play-services-ads-lite:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/2687d8b11493d1a50c41564609ebe9c3/play-services-ads-lite-11.6.2/AndroidManifest.xml:19:5-66
 MERGED from [com.google.android.gms:play-services-ads-lite:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/2687d8b11493d1a50c41564609ebe9c3/play-services-ads-lite-11.6.2/AndroidManifest.xml:19:5-66
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:4:22-64
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:4:22-64
 application
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:5-44:19
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:5-44:19
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:49:5-105:19
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:49:5-105:19
 MERGED from [com.google.android.gms:play-services-location:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/755fd9a98be3c947809615aef178a8dc/play-services-location-11.6.2/AndroidManifest.xml:4:5-19
@@ -168,135 +168,135 @@ MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /home/miquei
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e4e6b57f002cfe080fc04629f5b21250/firebase-analytics-impl-license-11.6.2/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e4e6b57f002cfe080fc04629f5b21250/firebase-analytics-impl-license-11.6.2/AndroidManifest.xml:5:5-20
 	android:supportsRtl
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:114-140
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:114-140
 	android:label
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:81-113
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:81-113
 	android:hardwareAccelerated
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:18-52
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:18-52
 	android:icon
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:53-80
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:5:53-80
 activity#br.com.innovatesoft.bibliantlh.MainActivity
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:9-11:20
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:9-11:20
 	android:screenOrientation
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:194-230
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:194-230
 	android:label
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:97-134
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:97-134
 	android:launchMode
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:135-165
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:135-165
 	android:windowSoftInputMode
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:294-336
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:294-336
 	android:configChanges
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:19-96
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:19-96
 	android:theme
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:231-293
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:231-293
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:166-193
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:6:166-193
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:7:13-10:29
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:7:13-10:29
 	android:label
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:7:28-65
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:7:28-65
 action#android.intent.action.MAIN
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:8:17-69
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:8:17-69
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:8:25-66
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:8:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:9:17-77
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:9:17-77
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:9:27-74
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:9:27-74
 activity#com.google.android.gms.ads.AdActivity
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:12:9-233
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:12:9-233
 MERGED from [com.google.android.gms:play-services-ads-lite:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/2687d8b11493d1a50c41564609ebe9c3/play-services-ads-lite-11.6.2/AndroidManifest.xml:25:9-257
 MERGED from [com.google.android.gms:play-services-ads-lite:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/2687d8b11493d1a50c41564609ebe9c3/play-services-ads-lite-11.6.2/AndroidManifest.xml:25:9-257
 	android:exported
 		ADDED from [com.google.android.gms:play-services-ads-lite:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/2687d8b11493d1a50c41564609ebe9c3/play-services-ads-lite-11.6.2/AndroidManifest.xml:25:231-255
 	android:configChanges
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:12:19-128
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:12:19-128
 	android:theme
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:12:182-230
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:12:182-230
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:12:129-181
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:12:129-181
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:13:9-134
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:13:9-134
 	android:value
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:13:77-131
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:13:77-131
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:13:20-76
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:13:20-76
 receiver#nl.xservices.plugins.ShareChooserPendingIntent
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:14:9-18:20
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:14:9-18:20
 	android:enabled
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:14:19-41
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:14:19-41
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:14:42-103
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:14:42-103
 intent-filter#action:name:android.intent.action.SEND
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:15:13-17:29
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:15:13-17:29
 action#android.intent.action.SEND
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:16:17-69
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:16:25-66
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:16:25-66
 amazon:enable-feature
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:22:9-159
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:22:9-159
 	xmlns:amazon
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:22:100-156
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:22:100-156
 	android:required
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:22:75-99
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:22:75-99
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:22:32-74
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:22:32-74
 service#com.onesignal.ADMMessageHandler
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:23:9-92
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:23:9-92
 	android:exported
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:23:18-42
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:23:18-42
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:23:43-89
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:23:43-89
 receiver#com.onesignal.ADMMessageHandler$Receiver
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:24:9-30:20
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:24:9-30:20
 	android:permission
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:24:75-139
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:24:75-139
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:24:19-74
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:24:19-74
 intent-filter#action:name:com.amazon.device.messaging.intent.RECEIVE+action:name:com.amazon.device.messaging.intent.REGISTRATION+category:name:br.com.innovatesoft.bibliantlh
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:25:13-29:29
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:25:13-29:29
 action#com.amazon.device.messaging.intent.REGISTRATION
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:26:17-90
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:26:17-90
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:26:25-87
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:26:25-87
 action#com.amazon.device.messaging.intent.RECEIVE
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:27:17-85
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:27:17-85
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:27:25-82
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:27:25-82
 category#br.com.innovatesoft.bibliantlh
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:28:17-75
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:28:17-75
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:28:27-72
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:28:27-72
 receiver#com.adobe.phonegap.push.BackgroundActionButtonHandler
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:32:9-90
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:32:9-90
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:32:19-87
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:32:19-87
 receiver#com.adobe.phonegap.push.PushDismissedHandler
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:33:9-81
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:33:9-81
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:33:19-78
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:33:19-78
 service#com.adobe.phonegap.push.FCMService
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:34:9-38:19
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:34:9-38:19
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:34:18-67
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:34:18-67
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:35:13-37:29
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:35:13-37:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:36:17-78
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:36:17-78
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:36:25-75
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:36:25-75
 service#com.adobe.phonegap.push.PushInstanceIDListenerService
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:39:9-43:19
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:39:9-43:19
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:39:18-86
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:39:18-86
 intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:40:13-42:29
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:40:13-42:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:41:17-80
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:41:17-80
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:41:25-77
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:41:25-77
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:46:5-79
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:46:5-79
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:25:5-79
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-analytics:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/02671c6f75e09b3d81498062d9238e7b/firebase-analytics-11.6.2/AndroidManifest.xml:21:5-78
@@ -308,31 +308,31 @@ MERGED from [com.google.firebase:firebase-iid:11.6.2] /home/miqueias/.gradle/cac
 MERGED from [com.google.android.gms:play-services-ads-lite:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/2687d8b11493d1a50c41564609ebe9c3/play-services-ads-lite-11.6.2/AndroidManifest.xml:20:5-78
 MERGED from [com.google.android.gms:play-services-ads-lite:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/2687d8b11493d1a50c41564609ebe9c3/play-services-ads-lite-11.6.2/AndroidManifest.xml:20:5-78
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:46:22-76
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:46:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:47:5-81
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:47:5-81
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:47:22-78
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:47:22-78
 uses-permission#android.permission.BLUETOOTH
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:48:5-68
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:48:5-68
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:48:22-65
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:48:22-65
 uses-permission#com.amazon.device.messaging.permission.RECEIVE
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:49:5-86
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:49:5-86
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:49:22-83
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:49:22-83
 permission#br.com.innovatesoft.bibliantlh.permission.RECEIVE_ADM_MESSAGE
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:50:5-132
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:50:5-132
 	android:protectionLevel
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:50:94-129
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:50:94-129
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:50:17-93
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:50:17-93
 uses-permission#br.com.innovatesoft.bibliantlh.permission.RECEIVE_ADM_MESSAGE
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:51:5-101
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:51:5-101
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:51:22-98
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:51:22-98
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:52:5-68
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:52:5-68
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:19:5-68
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:19:5-68
 MERGED from [com.google.firebase:firebase-analytics:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/02671c6f75e09b3d81498062d9238e7b/firebase-analytics-11.6.2/AndroidManifest.xml:22:5-67
@@ -342,17 +342,17 @@ MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /home/miqueias/
 MERGED from [com.google.firebase:firebase-iid:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/556119e82ef23807b8709b80bd7d3e5e/firebase-iid-11.6.2/AndroidManifest.xml:21:5-67
 MERGED from [com.google.firebase:firebase-iid:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/556119e82ef23807b8709b80bd7d3e5e/firebase-iid-11.6.2/AndroidManifest.xml:21:5-67
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:52:22-65
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:52:22-65
 uses-permission#android.permission.VIBRATE
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:53:5-66
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:53:5-66
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:24:5-66
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:24:5-66
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:53:22-63
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:53:22-63
 uses-sdk
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:5:5-44
 MERGED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-location:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/755fd9a98be3c947809615aef178a8dc/play-services-location-11.6.2/AndroidManifest.xml:3:5-43
@@ -391,8 +391,8 @@ MERGED from [me.leolin:ShortcutBadger:1.1.17] /home/miqueias/.gradle/caches/tran
 MERGED from [me.leolin:ShortcutBadger:1.1.17] /home/miqueias/.gradle/caches/transforms-2/files-2.1/2ac7518d36656ed0b68c57db75f72795/ShortcutBadger-1.1.17/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:multidex:1.0.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/f331adce4e4f4bd195fefe9b46054508/multidex-1.0.2/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/f331adce4e4f4bd195fefe9b46054508/multidex-1.0.2/AndroidManifest.xml:20:5-43
-MERGED from [:CordovaLib] /var/www/app/bibliantlh/platforms/android/CordovaLib/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:5-43
-MERGED from [:CordovaLib] /var/www/app/bibliantlh/platforms/android/CordovaLib/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:5-43
+MERGED from [:CordovaLib] /var/www/app/android/bibliantlh/platforms/android/CordovaLib/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:5-43
+MERGED from [:CordovaLib] /var/www/app/android/bibliantlh/platforms/android/CordovaLib/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:5-43
 MERGED from [com.google.android.gms:play-services-base-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/6ac14e6e831241d2adb584b9d6e88771/play-services-base-license-11.6.2/AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-base-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/6ac14e6e831241d2adb584b9d6e88771/play-services-base-license-11.6.2/AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-ads-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e2ce62aa452e1e05fa0045097689dc69/play-services-ads-license-11.6.2/AndroidManifest.xml:4:5-43
@@ -441,24 +441,24 @@ MERGED from [android.arch.core:runtime:1.1.0] /home/miqueias/.gradle/caches/tran
 MERGED from [android.arch.core:runtime:1.1.0] /home/miqueias/.gradle/caches/transforms-2/files-2.1/0a2bdce0da8cfd5c768a5af1598d6c65/runtime-1.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e4e6b57f002cfe080fc04629f5b21250/firebase-analytics-impl-license-11.6.2/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e4e6b57f002cfe080fc04629f5b21250/firebase-analytics-impl-license-11.6.2/AndroidManifest.xml:4:5-43
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.google.android.gms:play-services-ads:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/0731dd745a141497bdda57f340a7778f/play-services-ads-11.6.2/AndroidManifest.xml:17:42-92
 	android:targetSdkVersion
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:20:13-115
+ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:20:13-115
 	android:resource
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:20:75-112
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:20:75-112
 	android:name
-		ADDED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:20:24-74
+		ADDED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:20:24-74
 permission#${applicationId}.permission.C2D_MESSAGE
 ADDED from [com.onesignal:OneSignal:3.10.5] /home/miqueias/.gradle/caches/transforms-2/files-2.1/e997123954b34e6750e8287a3a7bbc65/OneSignal-3.10.5/AndroidManifest.xml:8:5-10:47
 MERGED from [com.google.firebase:firebase-iid:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/556119e82ef23807b8709b80bd7d3e5e/firebase-iid-11.6.2/AndroidManifest.xml:25:5-109
@@ -790,6 +790,6 @@ ADDED from [com.google.android.gms:play-services-basement:11.6.2] /home/miqueias
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:11.6.2] /home/miqueias/.gradle/caches/transforms-2/files-2.1/632486dd5fe09fc419b241de4620e909/play-services-basement-11.6.2/AndroidManifest.xml:20:20-65
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12 reason: org.apache.cordova has a targetSdkVersion < 4
+IMPLIED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12 reason: org.apache.cordova has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /var/www/app/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12 reason: org.apache.cordova requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /var/www/app/android/bibliantlh/platforms/android/app/src/main/AndroidManifest.xml:2:1-54:12 reason: org.apache.cordova requested WRITE_EXTERNAL_STORAGE

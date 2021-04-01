@@ -1,4 +1,7 @@
-#Thu Mar 11 11:22:04 BRT 2021
+#Thu Apr 01 09:47:52 BRT 2021
 base.0=/var/www/app/bibliantlh/platforms/android/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
+base.1=/var/www/app/android/bibliantlh/platforms/android/app/build/intermediates/dex/release/mergeDexRelease/classes.dex

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/var/www/app/bibliantlh/platforms/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-el/values-el.xml",
+            "outputFile": "/var/www/app/android/bibliantlh/platforms/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-el/values-el.xml",
             "map": [
                 {
                     "source": "/home/miqueias/.gradle/caches/transforms-2/files-2.1/632486dd5fe09fc419b241de4620e909/play-services-basement-11.6.2/res/values-el/values.xml",
